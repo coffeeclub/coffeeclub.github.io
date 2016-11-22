@@ -1,8 +1,7 @@
 # Site settings
 title: CoffeeClub
 email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-	sharing coding life
+description: sharing coding life
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://coffeeclub.github.io/" # the base hostname & protocol for your site
 twitter_username: jekyllrb
