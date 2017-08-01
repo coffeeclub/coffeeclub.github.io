@@ -7,7 +7,7 @@ categories: Linux
 本文主要介绍如何使用gdb分析core文件。
 二进制程序crash后，若系统有相关的配置，可以生成coredump文件，而core文件便是我们分析crash原因的重要线索。分析crash的backtrace就需要gdb工具。
 
-###ulimit
+### ulimit
 
 1. ulimit -c     //可查看core文件的生成开关。若结果为0，则表示关闭了此功能，不会生成core文件。 
 2. ulimit -c size   //可以限制core文件的大小（size的单位为kbyte），如果生成的信息超过此大小，将会被裁剪，如果生成被裁减的core文件，调试此core文件的时候，gdb也会提示错误.  
@@ -17,7 +17,7 @@ categories: Linux
    注：这种设置仅对当前生效，如果想永久生效需将命令添加到/etc/profile
 3. ulimit -a    //该命令将显示所有的用户定制，其中选项-a代表“all”。
 
-###core文件配置
+### core文件配置
 
 core文件存放路径在/proc/sys/kernel/core_pattern中配置
 
@@ -50,7 +50,7 @@ kernel.core_uses_pid = 0
 sysctl –p /etc/sysctl.conf
 ~~~
 
-###gdb调试
+### gdb调试
 * 已有core文件：
   * gdb 执行命令 core.pid
   * 进入gdb命令行后，执行bt，查看backtrace
